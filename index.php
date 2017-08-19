@@ -14,7 +14,7 @@
         $(document).ready(function(){
             $('.add_more').click(function(e){
                 e.preventDefault();
-                $(this).before("<input style='margin-top:10px' id='files' name='files[]' type='file' multiple/>");
+                $(this).before("<input style='margin-top:10px' id='file' name='files[]' type='file' multiple/>");
             });
             $(document).on('submit','#upload', function(e){
                 e.preventDefault();
@@ -27,9 +27,11 @@
                     contentType: false,
                     processData: false,
                     success: function (data) {
-                        alert("Data Uploaded: "+data);
+                        alert(data);
                         $('#name').val('');
                         $('#price').val('');
+                        $('#files').val('');
+                        $('#file').val('');
                     },
                     error:function(){
                         alert('submit error');
