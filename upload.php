@@ -45,7 +45,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
                 if($UploadOk == true){
                     move_uploaded_file($temp,$UploadFolder."/".$name);
                     //insert to tbl_images
-                    echo $name;
+                    echo '<br/> File name: '.$name;
                     $insertProImage = "INSERT INTO tbl_images (pro_id,image,image_url) 
                     					values ('$last_id','$name','$imgurl')";
                     if ($conn->query($insertProImage) === TRUE) {

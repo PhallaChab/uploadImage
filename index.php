@@ -7,10 +7,15 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="upload.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="upload.js" type="text/javascript" charset="utf-8"></script> -->
 
     <script>
+
         $(document).ready(function(){
+            $('.add_more').click(function(e){
+                e.preventDefault();
+                $(this).before("<input style='margin-top:10px' id='files' name='files[]' type='file' multiple/>");
+            });
             $(document).on('submit','#upload', function(e){
                 e.preventDefault();
                 var formData = new FormData(this);
@@ -53,9 +58,10 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <label>Chose Img</label>
+                    <label>Chose File</label>
                     <input id="files" name="files[]" type="file" multiple/>
-                    <div id="result"></div>
+                    
+                    <button type="button" class="add_more" style="margin-top:10px">Add More</button>
                 </div>
             </div>
             
