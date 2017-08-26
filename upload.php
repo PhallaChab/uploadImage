@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "dbupload";
+$dbname = "application_db";
 $conn = new mysqli($servername, $username, $password, $dbname);
     // if(isset($_POST['post'])){
         $pname = $_POST['name'];
@@ -16,7 +16,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
             $KB = 1024;
             $totalBytes = $bytes * $KB;
             $UploadFolder = "uploads";
-            $url = "http://ci-inventory.dev/phpUpload/";
+            $excelFile = "urlfile.xlsx";
+            $urlfile = "http://ci-inventory.dev/phpUpload/";
 
             //create directory foloder
             if (!file_exists($UploadFolder)) {
